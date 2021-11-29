@@ -162,7 +162,7 @@ class App extends React.Component {
       const saturnRingMesh = this.planet.children[6];
       saturnRingMesh.position.set(0, 0, 0);
       saturnRingMesh.scale.set(16, 16, 16);
-      saturnRingMesh.rotation.x = 10;
+      saturnRingMesh.rotation.x = 3;
       saturn.add(saturnRingMesh); // 토성 고리
 
       const uranusOrbit = new THREE.Object3D();
@@ -204,18 +204,18 @@ class App extends React.Component {
   };
 
   update(time) {
-    time *= 0.001;
+    time *= 0.00004;
     if (this.planet) {
-      this.sunMesh.rotation.y = time / 25.4;
-      this.mercuryMesh.rotation.y = time / 58.8;
-      this.venusMesh.rotation.y = -time / 243;
-      this.earthMesh.rotation.y = time;
+      this.sunMesh.rotation.y = (time * 363) / 25.4;
+      this.mercuryMesh.rotation.y = (time * 363) / 58.8;
+      this.venusMesh.rotation.y = (-time * 363) / 243;
+      this.earthMesh.rotation.y = time * 363;
       this.moonMesh.rotation.y = time * 2;
-      this.marsMesh.rotation.y = time / 1.02;
-      this.jupiterMesh.rotation.y = time * 2.43;
-      this.saturn.rotation.y = time * 2.33;
-      this.uranusMesh.rotation.y = -time * 1.38;
-      this.neptuneMesh.rotation.y = time * 1.48; // 자전
+      this.marsMesh.rotation.y = (time * 363) / 1.02;
+      this.jupiterMesh.rotation.y = time * 363 * 2.43;
+      this.saturn.rotation.y = time * 363 * 2.33;
+      this.uranusMesh.rotation.y = -time * 363 * 1.38;
+      this.neptuneMesh.rotation.y = time * 363 * 1.48; // 자전
 
       this.mercuryOrbit.rotation.y = time * 4.14;
       this.venusOrbit.rotation.y = time * 1.62;
