@@ -232,7 +232,7 @@ class App extends React.Component {
   render() {
     return (
       <>
-        <GlovalStyle/>
+        <GlovalStyle />
         <div
           ref={(el) => (this.element = el)}
           style={{
