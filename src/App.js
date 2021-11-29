@@ -2,10 +2,10 @@
 import React from "react";
 import { SetupCamera } from "./lib/function/Camera";
 import { SetupLight } from "./lib/function/Light";
-import GlovalStyle from "./styles/styles";
 import * as THREE from "three";
 import { SetupControls } from "./lib/function/Controls";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
+import GlovalStyle from "./styles";
 
 class App extends React.Component {
   constructor(props) {
@@ -232,7 +232,7 @@ class App extends React.Component {
   render() {
     return (
       <>
-        <GlovalStyle />
+        <GlovalStyle/>
         <div
           ref={(el) => (this.element = el)}
           style={{
