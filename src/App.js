@@ -96,6 +96,7 @@ class App extends React.Component {
       const mercuryMesh = this.planet.children[2];
       this.mercuryMesh = mercuryMesh;
       mercuryMesh.position.set(657, 0, 0);
+      mercuryMesh.rotation.x = 0.001;
       mercuryMesh.scale.set(100, 100, 100); // 크기
       mercuryOrbit.add(mercuryMesh); // 수성
 
