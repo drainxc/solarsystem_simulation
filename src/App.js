@@ -119,6 +119,7 @@ class App extends React.Component {
       const earthMesh = this.planet.children[0];
       this.earthMesh = earthMesh;
       earthMesh.scale.set(72, 72, 72);
+      earthMesh.rotation.x = 0.65;
       earthMesh.position.set(0, 0, 0);
       earth.add(earthMesh); // 지구
 
