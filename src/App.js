@@ -129,6 +129,7 @@ class App extends React.Component {
       const moonMesh = this.planet.children[8];
       this.moonMesh = moonMesh;
       moonMesh.position.set(60, 0, 0);
+      moonMesh.rotation.x = 0.16;
       moonMesh.scale.set(10, 10, 10);
       moonOrbit.add(moonMesh); // 달
 
