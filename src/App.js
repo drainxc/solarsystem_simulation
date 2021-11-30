@@ -106,7 +106,7 @@ class App extends React.Component {
       const venusMesh = this.planet.children[1];
       this.venusMesh = venusMesh;
       venusMesh.position.set(908, 0, 0);
-      venusMesh.rotation.x = -0.2;
+      venusMesh.rotation.x = 4.43;
       venusMesh.scale.set(88, 88, 88);
       venusOrbit.add(venusMesh); // 금성
 
@@ -120,7 +120,7 @@ class App extends React.Component {
       const earthMesh = this.planet.children[0];
       this.earthMesh = earthMesh;
       earthMesh.scale.set(72, 72, 72);
-      earthMesh.rotation.x = 0.65;
+      earthMesh.rotation.x = 0.57;
       earthMesh.position.set(0, 0, 0);
       earth.add(earthMesh); // 지구
 
@@ -161,13 +161,13 @@ class App extends React.Component {
       this.saturnMesh = saturnMesh;
       saturnMesh.position.set(2378, 0, 0);
       saturnMesh.scale.set(16, 16, 16);
-      saturnMesh.rotation.x = 0.7;
+      saturnMesh.rotation.x = 0.67;
       saturnOrbit.add(saturnMesh); // 토성
       const saturnRingMesh = this.planet.children[6];
       this.saturnRingMesh = saturnRingMesh;
       saturnRingMesh.position.set(2378, 0, 0);
       saturnRingMesh.scale.set(16, 16, 16);
-      saturnRingMesh.rotation.x = 0.7;
+      saturnRingMesh.rotation.x = 0.67;
       saturnOrbit.add(saturnRingMesh); // 토성 고리
 
       const uranusOrbit = new THREE.Object3D();
