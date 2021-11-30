@@ -140,6 +140,7 @@ class App extends React.Component {
       const marsMesh = this.planet.children[0];
       this.marsMesh = marsMesh;
       marsMesh.position.set(1327, 0, 0);
+      marsMesh.rotation.x = 0.63;
       marsMesh.scale.set(64, 64, 64);
       marsOrbit.add(marsMesh); // 화성
 
@@ -149,6 +150,7 @@ class App extends React.Component {
       const jupiterMesh = this.planet.children[0];
       this.jupiterMesh = jupiterMesh;
       jupiterMesh.position.set(1878, 0, 0);
+      jupiterMesh.position.x = 0.08;
       jupiterMesh.scale.set(18, 18, 18);
       jupiterOrbit.add(jupiterMesh); // 목성
 
@@ -174,6 +176,7 @@ class App extends React.Component {
       const uranusMesh = this.planet.children[0];
       this.uranusMesh = uranusMesh;
       uranusMesh.position.set(3078, 0, 0);
+      uranusMesh.position.x = 2.44;
       uranusMesh.scale.set(16, 16, 16);
       uranusOrbit.add(uranusMesh); // 천왕성
 
@@ -183,6 +186,7 @@ class App extends React.Component {
       const neptuneMesh = this.planet.children[0];
       this.neptuneMesh = neptuneMesh;
       neptuneMesh.position.set(3678, 0, 0);
+      neptuneMesh.position.x = 0.71;
       neptuneMesh.scale.set(16, 16, 16);
       neptuneOrbit.add(neptuneMesh); // 해왕성
 
