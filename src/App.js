@@ -105,6 +105,7 @@ class App extends React.Component {
       const venusMesh = this.planet.children[1];
       this.venusMesh = venusMesh;
       venusMesh.position.set(908, 0, 0);
+      venusMesh.rotation.x = -0.2;
       venusMesh.scale.set(88, 88, 88);
       venusOrbit.add(venusMesh); // 금성
 
