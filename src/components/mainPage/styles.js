@@ -10,6 +10,7 @@ export const MainDiv = styled.div`
     height: 50px;
     top: 20px;
     cursor: pointer;
+    transition: 0.3s;
     img {
       width: 32px;
       height: 32px;
@@ -41,5 +42,8 @@ export const MainDiv = styled.div`
   }
   .planet8 {
     left: 460px;
+  }
+  button:hover {
+    transform: scale(0.9);
   }
 `;
