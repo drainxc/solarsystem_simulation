@@ -10,6 +10,7 @@ import sun from "../../asset/sun.png";
 import mercury from "../../asset/mercury.png";
 import venus from "../../asset/venus.png";
 import earth from "../../asset/earth.png";
+import moon from "../../asset/moon.png";
 import mars from "../../asset/mars.png";
 import jupiter from "../../asset/jupiter.png";
 import saturn from "../../asset/saturn.png";
@@ -220,8 +221,8 @@ class MainPage extends React.Component {
   };
 
   update(time) {
-    time *= 0.0001;
     if (this.planet) {
+      time *= 0.0001;
       this.sunMesh.rotation.y = (time * 363) / 25.4;
       this.mercuryMesh.rotation.y = (time * 363) / 58.8;
       this.venusMesh.rotation.y = (-time * 363) / 243;
@@ -252,14 +253,26 @@ class MainPage extends React.Component {
       mercury,
       venus,
       earth,
+      moon,
       mars,
       jupiter,
       saturn,
       uranus,
       neptune,
     ];
+
+    function onClickHandler(e) {
+      if (e.target.className === "planet0") {
+      }
+    }
+
     return (
       <S.MainDiv>
+        {planet.map((item, i) => (
+          <button className={"planet" + i} onClick={(e) => onClickHandler(e)}>
+            <img className={"planet" + i} src={item} alt="" />
+          </button>
+        ))}
         <div
           ref={(el) => (this.element = el)}
           style={{
@@ -269,13 +282,7 @@ class MainPage extends React.Component {
             width: "100%",
             height: "100%",
           }}
-        >
-          {planet.map((item, i) => (
-            <button className={("planet" + i)}>
-              <img src={item} alt="" />
-            </button>
-          ))}
-        </div>
+        ></div>
       </S.MainDiv>
     );
   }
