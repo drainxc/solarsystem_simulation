@@ -6,5 +6,40 @@ export const MainDiv = styled.div`
     background-color: white;
     border: none;
     border-radius: 7px;
+    width: 50px;
+    height: 50px;
+    top: 20px;
+    cursor: pointer;
+    img {
+      width: 32px;
+      height: 32px;
+    }
+  }
+  .planet0 {
+    left: 20px;
+  }
+  .planet1 {
+    left: 75px;
+  }
+  .planet2 {
+    left: 130px;
+  }
+  .planet3 {
+    left: 185px;
+  }
+  .planet4 {
+    left: 240px;
+  }
+  .planet5 {
+    left: 295px;
+  }
+  .planet6 {
+    left: 350px;
+  }
+  .planet7 {
+    left: 405px;
+  }
+  .planet8 {
+    left: 460px;
   }
 `;

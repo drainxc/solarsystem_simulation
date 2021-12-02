@@ -6,7 +6,15 @@ import * as THREE from "three";
 import { SetupControls } from "../../lib/function/Controls";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import * as S from "./styles";
-import coordinates from "../../asset/coordinates.png";
+import sun from "../../asset/sun.png";
+import mercury from "../../asset/mercury.png";
+import venus from "../../asset/venus.png";
+import earth from "../../asset/earth.png";
+import mars from "../../asset/mars.png";
+import jupiter from "../../asset/jupiter.png";
+import saturn from "../../asset/saturn.png";
+import uranus from "../../asset/uranus.png";
+import neptune from "../../asset/neptune.png";
 
 class MainPage extends React.Component {
   constructor(props) {
@@ -240,15 +248,15 @@ class MainPage extends React.Component {
 
   render() {
     const planet = [
-      "sun",
-      "mercury",
-      "venus",
-      "earth",
-      "mars",
-      "jupiter",
-      "saturn",
-      "uranus",
-      "neptune",
+      sun,
+      mercury,
+      venus,
+      earth,
+      mars,
+      jupiter,
+      saturn,
+      uranus,
+      neptune,
     ];
     return (
       <S.MainDiv>
@@ -262,8 +270,10 @@ class MainPage extends React.Component {
             height: "100%",
           }}
         >
-          {planet.map((item) => (
-            <button className={item}></button>
+          {planet.map((item, i) => (
+            <button className={("planet" + i)}>
+              <img src={item} alt="" />
+            </button>
           ))}
         </div>
       </S.MainDiv>
