@@ -90,7 +90,7 @@ class MainPage extends React.Component {
   setupModel() {
     if (this.planet) {
       const backGround = this.planet.children[15];
-      backGround.scale.set(5000, 5000, 5000);
+      backGround.scale.set(7500, 7500, 7500);
       this.scene.add(backGround);
 
       const solarSystem = new THREE.Object3D(); // 태양계 생성
@@ -235,15 +235,34 @@ class MainPage extends React.Component {
       this.uranusMesh.rotation.y = -time * 363 * 1.38;
       this.neptuneMesh.rotation.y = time * 363 * 1.48; // 자전
 
-      this.mercuryOrbit.rotation.y = time * 4.14;
-      this.venusOrbit.rotation.y = time * 1.62;
-      this.earthOrbit.rotation.y = time;
-      this.moonOrbit.rotation.y = time * 2;
-      this.marsOrbit.rotation.y = time * 0.53;
-      this.jupiterOrbit.rotation.y = time * 0.08;
-      this.saturnOrbit.rotation.y = time * 0.03;
-      this.uranusOrbit.rotation.y = time * 0.011;
-      this.neptuneOrbit.rotation.y = time * 0.006; // 공전
+      // this.mercuryOrbit.rotation.y = time * 4.14;
+      // this.venusOrbit.rotation.y = time * 1.62;
+      // this.earthOrbit.rotation.y = time;
+      // this.moonOrbit.rotation.y = time * 2;
+      // this.marsOrbit.rotation.y = time * 0.53;
+      // this.jupiterOrbit.rotation.y = time * 0.08;
+      // this.saturnOrbit.rotation.y = time * 0.03;
+      // this.uranusOrbit.rotation.y = time * 0.011;
+      // this.neptuneOrbit.rotation.y = time * 0.006; // 공전
+    }
+
+    if (this.camera.position.x > 4100) {
+      this.camera.position.x = 4100;
+    }
+    if (this.camera.position.x < -4100) {
+      this.camera.position.x = -4100;
+    }
+    if (this.camera.position.y > 4100) {
+      this.camera.position.y = 4100;
+    }
+    if (this.camera.position.y < -4100) {
+      this.camera.position.y = -4100;
+    }
+    if (this.camera.position.z > 4100) {
+      this.camera.position.z = 4100;
+    }
+    if (this.camera.position.z < -4100) {
+      this.camera.position.z = -4100;
     }
   }
 
