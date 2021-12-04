@@ -16,6 +16,8 @@ import jupiter from "../../asset/jupiter.png";
 import saturn from "../../asset/saturn.png";
 import uranus from "../../asset/uranus.png";
 import neptune from "../../asset/neptune.png";
+import { Search } from "../../lib/api";
+import Modal from "../modal/index";
 
 class MainPage extends React.Component {
   constructor(props) {
@@ -235,15 +237,15 @@ class MainPage extends React.Component {
       this.uranusMesh.rotation.y = -time * 363 * 1.38;
       this.neptuneMesh.rotation.y = time * 363 * 1.48; // 자전
 
-      // this.mercuryOrbit.rotation.y = time * 4.14;
-      // this.venusOrbit.rotation.y = time * 1.62;
-      // this.earthOrbit.rotation.y = time;
-      // this.moonOrbit.rotation.y = time * 2;
-      // this.marsOrbit.rotation.y = time * 0.53;
-      // this.jupiterOrbit.rotation.y = time * 0.08;
-      // this.saturnOrbit.rotation.y = time * 0.03;
-      // this.uranusOrbit.rotation.y = time * 0.011;
-      // this.neptuneOrbit.rotation.y = time * 0.006; // 공전
+      this.mercuryOrbit.rotation.y = time * 4.14;
+      this.venusOrbit.rotation.y = time * 1.62;
+      this.earthOrbit.rotation.y = time;
+      this.moonOrbit.rotation.y = time * 2;
+      this.marsOrbit.rotation.y = time * 0.53;
+      this.jupiterOrbit.rotation.y = time * 0.08;
+      this.saturnOrbit.rotation.y = time * 0.03;
+      this.uranusOrbit.rotation.y = time * 0.011;
+      this.neptuneOrbit.rotation.y = time * 0.006; // 공전
     }
 
     if (this.camera.position.x > 4100) {
@@ -280,18 +282,33 @@ class MainPage extends React.Component {
       neptune,
     ];
 
-    function onClickHandler(e) {
-      if (e.target.className === "planet0") {
-      }
+    const strPlanet = [
+      "Sun",
+      "Mercury",
+      "Venus",
+      "Earth",
+      "Moon",
+      "Mars",
+      "Jupiter",
+      "Saturn",
+      "Uranus",
+      "Neptune",
+    ];
+
+    async function onClickHandler(e) {
+      const { data } = await Search(e.target.className);
+
+      console.log(data);
     }
 
     return (
       <S.MainDiv>
         {planet.map((item, i) => (
-          <button className={"planet" + i} onClick={(e) => onClickHandler(e)}>
-            <img className={"planet" + i} src={item} alt="" />
+          <button className={strPlanet[i]} onClick={(e) => onClickHandler(e)}>
+            <img className={strPlanet[i]} src={item} alt="" />
           </button>
         ))}
+
         <div
           ref={(el) => (this.element = el)}
           style={{

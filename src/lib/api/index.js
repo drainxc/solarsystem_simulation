@@ -1,9 +1,9 @@
 import axios from "axios";
 
 const solar = axios.create({
-  baseURL: "http://670d-2001-2d8-ee35-ea4f-a0ef-4096-b91b-eeae.ngrok.io/",
+  baseURL: "http://9416-2001-2d8-910-b8e6-f8e8-b3af-214-9c0b.ngrok.io",
 });
 
-export const search = (params) => {
+export const Search = (params) => {
   return solar.get(params);
 };
