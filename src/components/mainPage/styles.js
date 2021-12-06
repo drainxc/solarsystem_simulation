@@ -17,34 +17,34 @@ export const MainDiv = styled.div`
       height: 32px;
     }
   }
-  .sun {
+  .Sun {
     left: 20px;
   }
-  .mercury {
+  .Mercury {
     left: 75px;
   }
-  .venus {
+  .Venus {
     left: 130px;
   }
-  .earth {
+  .Earth {
     left: 185px;
   }
-  .moon {
+  .Moon {
     left: 240px;
   }
-  .mars {
+  .Mars {
     left: 295px;
   }
-  .jupiter {
+  .Jupiter {
     left: 350px;
   }
-  .saturn {
+  .Saturn {
     left: 405px;
   }
-  .uranus {
+  .Uranus {
     left: 460px;
   }
-  .neptune {
+  .Neptune {
     left: 515px;
   }
   button:hover {
