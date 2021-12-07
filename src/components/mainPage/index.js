@@ -17,7 +17,7 @@ import saturn from "../../asset/saturn.png";
 import uranus from "../../asset/uranus.png";
 import neptune from "../../asset/neptune.png";
 import { Search } from "../../lib/api";
-import Modal from "../modal/index";
+import Modal from "react-modal";
 
 class MainPage extends React.Component {
   constructor(props) {
@@ -268,6 +268,23 @@ class MainPage extends React.Component {
     }
   }
 
+  state = {
+    show: false,
+  };
+
+  showModal = () => {
+    this.setState({
+      show: true,
+    });
+  };
+
+  async onClickHandler(e) {
+    // const { data } = await Search(e.target.className);
+    // console.log(data);
+    
+    this.showModal();
+  }
+
   render() {
     const planet = [
       sun,
@@ -295,20 +312,40 @@ class MainPage extends React.Component {
       "Neptune",
     ];
 
-    async function onClickHandler(e) {
-      const { data } = await Search(e.target.className);
-
-      console.log(data);
-    }
-
     return (
       <S.MainDiv>
         {planet.map((item, i) => (
-          <button className={strPlanet[i]} onClick={(e) => onClickHandler(e)}>
+          <button
+            className={strPlanet[i]}
+            onClick={(e) => this.onClickHandler(e)}
+          >
             <img className={strPlanet[i]} src={item} alt="" />
           </button>
         ))}
-
+        <Modal
+          isOpen={this.state.show}
+          onRequestClose={() =>
+            this.setState({
+              show: false,
+            })
+          }
+          style={{
+            overlay: {
+              backgroundColor: "rgba(255, 255, 255, 0)",
+            },
+            content: {
+              position: 'absolute',
+              width: "400px",
+              height: "500px",
+              top: '95px',
+              left: '20px',
+              right: '40px',
+              bottom: '40px'
+            }
+          }}
+        >
+          dasf
+        </Modal>
         <div
           ref={(el) => (this.element = el)}
           style={{
