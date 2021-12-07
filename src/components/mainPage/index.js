@@ -18,6 +18,7 @@ import uranus from "../../asset/uranus.png";
 import neptune from "../../asset/neptune.png";
 import { Search } from "../../lib/api";
 import Modal from "react-modal";
+import ModalWindow from "../modal";
 
 class MainPage extends React.Component {
   constructor(props) {
@@ -270,6 +271,7 @@ class MainPage extends React.Component {
 
   state = {
     show: false,
+    data: 0,
   };
 
   showModal = () => {
@@ -281,7 +283,8 @@ class MainPage extends React.Component {
   async onClickHandler(e) {
     // const { data } = await Search(e.target.className);
     // console.log(data);
-    
+    this.state.data += 1;
+
     this.showModal();
   }
 
@@ -322,30 +325,7 @@ class MainPage extends React.Component {
             <img className={strPlanet[i]} src={item} alt="" />
           </button>
         ))}
-        <Modal
-          isOpen={this.state.show}
-          onRequestClose={() =>
-            this.setState({
-              show: false,
-            })
-          }
-          style={{
-            overlay: {
-              backgroundColor: "rgba(255, 255, 255, 0)",
-            },
-            content: {
-              position: 'absolute',
-              width: "400px",
-              height: "500px",
-              top: '95px',
-              left: '20px',
-              right: '40px',
-              bottom: '40px'
-            }
-          }}
-        >
-          dasf
-        </Modal>
+        <ModalWindow show={this.state.show} data={this.state.data} />
         <div
           ref={(el) => (this.element = el)}
           style={{
