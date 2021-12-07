@@ -1,15 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import Modal from "react-modal";
 
-export default function ModalWindow({show, data}) {
+export default function ModalWindow({ state }) {
   return (
     <Modal
-      isOpen={show}
-      onRequestClose={() =>
-        this.setState({
-          show: false,
-        })
-      }
+      isOpen={state.show}
       style={{
         overlay: {
           backgroundColor: "rgba(255, 255, 255, 0)",
@@ -25,7 +20,8 @@ export default function ModalWindow({show, data}) {
         },
       }}
     >
-      {data}
+      <div>{state.data.planet}</div>
+      <div>{state.data.explain}</div>
     </Modal>
   );
 }

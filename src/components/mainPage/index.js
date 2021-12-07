@@ -224,8 +224,8 @@ class MainPage extends React.Component {
   };
 
   update(time) {
+    time *= 0.0001;
     if (this.planet) {
-      time *= 0.0001;
       this.sunMesh.rotation.y = (time * 363) / 25.4;
       this.mercuryMesh.rotation.y = (time * 363) / 58.8;
       this.venusMesh.rotation.y = (-time * 363) / 243;
@@ -271,7 +271,10 @@ class MainPage extends React.Component {
 
   state = {
     show: false,
-    data: 0,
+    data: {
+      planet: "",
+      explain: "",
+    },
   };
 
   showModal = () => {
@@ -281,11 +284,24 @@ class MainPage extends React.Component {
   };
 
   async onClickHandler(e) {
-    // const { data } = await Search(e.target.className);
-    // console.log(data);
-    this.state.data += 1;
+    const { data } = await Search(e.target.className);
+    this.setState({
+      data: data,
+    });
+    console.log(this.state.data);
 
     this.showModal();
+  }
+
+  onClose(e) {
+    if (
+      e.target.className ===
+      "ReactModal__Overlay ReactModal__Overlay--after-open"
+    ) {
+      this.setState({
+        show: false,
+      });
+    }
   }
 
   render() {
@@ -315,18 +331,22 @@ class MainPage extends React.Component {
       "Neptune",
     ];
 
+    document.addEventListener("click", (e) => this.onClose(e));
+
     return (
       <S.MainDiv>
         {planet.map((item, i) => (
           <button
+            id="button"
             className={strPlanet[i]}
             onClick={(e) => this.onClickHandler(e)}
           >
             <img className={strPlanet[i]} src={item} alt="" />
           </button>
         ))}
-        <ModalWindow show={this.state.show} data={this.state.data} />
+        <ModalWindow state={this.state} id="modal" />
         <div
+          id="canvas"
           ref={(el) => (this.element = el)}
           style={{
             position: "absolute",
