@@ -272,7 +272,7 @@ class MainPage extends React.Component {
     show: false,
     data: {
       planet: "NOTFOUND 404 :(",
-      explain: "notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound ",
+      explain: "",
     },
   };
 
