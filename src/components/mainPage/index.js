@@ -17,7 +17,6 @@ import saturn from "../../asset/saturn.png";
 import uranus from "../../asset/uranus.png";
 import neptune from "../../asset/neptune.png";
 import { Search } from "../../lib/api";
-import Modal from "react-modal";
 import ModalWindow from "../modal";
 
 class MainPage extends React.Component {
@@ -272,8 +271,8 @@ class MainPage extends React.Component {
   state = {
     show: false,
     data: {
-      planet: "",
-      explain: "",
+      planet: "NOTFOUND 404 :(",
+      explain: "notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound notfound ",
     },
   };
 
@@ -284,13 +283,12 @@ class MainPage extends React.Component {
   };
 
   async onClickHandler(e) {
+    this.showModal();
     const { data } = await Search(e.target.className);
     this.setState({
       data: data,
     });
     console.log(this.state.data);
-
-    this.showModal();
   }
 
   onClose(e) {
@@ -344,7 +342,7 @@ class MainPage extends React.Component {
             <img className={strPlanet[i]} src={item} alt="" />
           </button>
         ))}
-        <ModalWindow state={this.state} id="modal" />
+        <ModalWindow state={this.state} />
         <div
           id="canvas"
           ref={(el) => (this.element = el)}
