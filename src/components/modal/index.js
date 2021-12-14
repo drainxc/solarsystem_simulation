@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Modal from "react-modal";
 import * as S from "./styles";
 
@@ -21,7 +21,7 @@ export default function ModalWindow({ state }) {
 
   return (
     <>
-      <Modal closeTimeoutMS={500} isOpen={state.show} style={modalStyles}>
+      <Modal isOpen={state.show} style={modalStyles}>
         <S.ContentDiv>
           <div className="title">{state.data.planet}</div>
           <div className="contents">{state.data.explain}</div>
