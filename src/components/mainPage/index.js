@@ -271,7 +271,7 @@ class MainPage extends React.Component {
   state = {
     show: false,
     data: {
-      planet: "NOTFOUND 404 :(",
+      planet: "오상우가 배포 안함 😡",
       explain: "",
     },
   };
